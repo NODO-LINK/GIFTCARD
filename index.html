@@ -8,8 +8,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="format-detection" content="telephone=no">
 <title>Gift Card Día del Novio · Spot Club</title>
-<meta name="description" content="Tienes un regalo: gift card de $14 para usar en Spot Club.">
-<meta property="og:title" content="Tienes un regalo 🎁 · Spot Club">
+<meta name="description" content="Gift card de $14 en Spot Club por el Día del Novio.">
+<meta property="og:title" content="Gift Card Día del Novio · Spot Club">
 <meta property="og:description" content="Gift card de $14 por el Día del Novio.">
 <meta name="theme-color" content="#06070b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -136,6 +136,107 @@ footer{font-family:var(--f-display);font-size:9px;letter-spacing:.4em;color:var(
 .linkbox{font-family:var(--f-mono);font-size:12px;word-break:break-all;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:10px;user-select:all}
 footer{cursor:default;user-select:none;-webkit-user-select:none}
 .loading{color:var(--muted);text-align:center;font-size:13px}
+/* ---------- Video explicativo (Doberman) ---------- */
+.hv{display:flex;flex-direction:column;align-items:center;gap:14px;padding-block:4px 6px}
+.hv-phone{position:relative;width:min(250px,72vw);aspect-ratio:9/17;border-radius:34px;background:#07080c;border:7px solid #1a1d27;box-shadow:0 0 0 1px #2a2f3e,0 30px 60px -25px #000,0 0 50px -20px #9fd8ff44;overflow:hidden;container-type:inline-size;isolation:isolate}
+.hv-phone::before{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:30%;height:5.5%;max-height:18px;border-radius:99px;background:#000;z-index:20}
+.hv-steps{position:absolute;top:calc(5.5% + 12px);left:10px;right:10px;display:flex;gap:4px;z-index:19}
+.hv-steps i{flex:1;height:3px;border-radius:3px;background:#ffffff22;overflow:hidden;position:relative}
+.hv-steps i::after{content:"";position:absolute;inset:0;background:var(--ice);transform:scaleX(0);transform-origin:left}
+.hv-steps i.done::after{transform:scaleX(1)}
+.hv-steps i.on::after{animation:hvfill var(--dur,5s) linear forwards}
+@keyframes hvfill{to{transform:scaleX(1)}}
+.hv-sc{position:absolute;inset:0;opacity:0;transition:opacity .45s ease;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18% 8% 8%;font-size:4.6cqw;color:var(--ink)}
+.hv-sc.on{opacity:1}
+.hv-finger{position:absolute;left:0;top:0;width:13cqw;height:13cqw;border-radius:50%;background:#ffffffcc;box-shadow:0 4px 12px #0008;z-index:18;opacity:0;transition:transform .55s cubic-bezier(.3,.8,.3,1),opacity .3s;pointer-events:none}
+.hv-finger.show{opacity:.9}
+.hv-finger::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid #fff;opacity:0}
+.hv-finger.press{background:#fff}
+.hv-finger.press::after{animation:hvring .5s ease-out}
+@keyframes hvring{from{opacity:.9;transform:scale(.6)}to{opacity:0;transform:scale(1.6)}}
+/* escena 1 */
+.hv-env,.hv-card{position:absolute;left:10%;right:10%;top:36%;aspect-ratio:1.586;border-radius:10px}
+.hv-env{background:linear-gradient(160deg,#161a28,#0a0c13);border:1px solid #ffffff1a;display:grid;place-items:center;transition:transform .45s,opacity .45s}
+.hv-env b{width:24%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff8fb0,var(--rose) 45%,#9c1f48);box-shadow:0 0 20px #ff5d8f88}
+.hv-env.gone{transform:scale(.85);opacity:0}
+.hv-card{perspective:600px;opacity:0;transform:translateY(12px) scale(.9);transition:opacity .5s,transform .5s}
+.hv-card.in{opacity:1;transform:none}
+.hv-ci{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.hv-card.flip .hv-ci{transform:rotateY(180deg)}
+.hv-f{position:absolute;inset:0;border-radius:10px;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid #ffffff22;overflow:hidden;padding:7% 8%;display:flex;flex-direction:column;justify-content:space-between}
+.hv-front{background:radial-gradient(100% 90% at 100% 0%,#1d2440,transparent 60%),radial-gradient(90% 80% at 0% 100%,#3a0f24,transparent 60%),#0c0e15}
+.hv-back{transform:rotateY(180deg);background:#0c0e15;align-items:center;justify-content:center;gap:6%}
+.hv-brand{font-family:var(--f-display);font-weight:700;font-size:3.6cqw;letter-spacing:.2em}
+.hv-amt{font-family:var(--f-display);font-weight:700;font-size:11cqw;line-height:1;background:linear-gradient(180deg,#fff,#8d98b3);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hv-nm{display:flex;gap:10%;font-size:3cqw;color:var(--muted)}
+.hv-nm b{color:var(--ink);display:block;font-size:3.6cqw}
+.hv-code{font-family:var(--f-mono);font-size:4.4cqw;letter-spacing:.08em;border:1px dashed #ffffff40;border-radius:6px;padding:3% 6%}
+.hv-wbtn{background:linear-gradient(135deg,#25d366,#128c4a);color:#fff;font-weight:700;font-size:3.6cqw;padding:3.5% 8%;border-radius:99px;transition:transform .15s}
+.hv-wbtn.press{transform:scale(.9)}
+/* escena 2 chat */
+.hv-chat{padding:0;justify-content:flex-start;background:#0b141a}
+.hv-ch{width:100%;display:flex;align-items:center;gap:3cqw;padding:calc(5.5% + 26px) 5cqw 3cqw;background:#1f2c34}
+.hv-av{width:9cqw;height:9cqw;border-radius:50%;background:#000;border:1px solid #ffffff33;display:grid;place-items:center;font-family:var(--f-display);font-size:2.6cqw;font-weight:700}
+.hv-ch small{display:block;color:#8696a0;font-size:3cqw}
+.hv-ch strong{font-size:4.2cqw}
+.hv-cb{flex:1;width:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:2.5cqw;padding:4cqw;overflow:hidden;background-image:radial-gradient(#ffffff08 1px,transparent 1px);background-size:14px 14px}
+.hv-b{max-width:82%;padding:2.4cqw 3.2cqw;border-radius:3cqw;font-size:3.7cqw;line-height:1.35;animation:hvpop .35s cubic-bezier(.2,.9,.3,1.3)}
+.hv-b.out{align-self:flex-end;background:#005c4b;border-top-right-radius:1cqw}
+.hv-b.in{align-self:flex-start;background:#202c33;border-top-left-radius:1cqw}
+.hv-b .lk{color:#53bdeb;text-decoration:underline;word-break:break-all}
+.hv-b .pv{margin-top:2cqw;border-radius:2cqw;background:#0c0e15;padding:3cqw;font-family:var(--f-display);font-size:3cqw;letter-spacing:.15em;border-left:3px solid var(--rose)}
+.hv-typing{align-self:flex-start;background:#202c33;border-radius:3cqw;padding:3cqw 4cqw;display:flex;gap:1.4cqw}
+.hv-typing i{width:1.8cqw;height:1.8cqw;border-radius:50%;background:#8696a0;animation:hvdot 1s infinite}
+.hv-typing i:nth-child(2){animation-delay:.15s}.hv-typing i:nth-child(3){animation-delay:.3s}
+@keyframes hvdot{50%{transform:translateY(-1.2cqw);opacity:.5}}
+@keyframes hvpop{from{opacity:0;transform:translateY(8px) scale(.9)}to{opacity:1;transform:none}}
+/* escena 3 */
+.hv-lock{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;padding-top:24%;background:radial-gradient(120% 70% at 50% 0%,#1b2340,#07080c 70%);transition:opacity .4s}
+.hv-lock.gone{opacity:0}
+.hv-time{font-size:17cqw;font-weight:700;letter-spacing:-.02em;line-height:1}
+.hv-date{font-size:3.6cqw;color:var(--muted);margin-top:1cqw}
+.hv-notif{margin-top:12%;width:88%;background:#1e2230ee;border-radius:4cqw;padding:3.5cqw;font-size:3.5cqw;transform:translateY(-30cqw);opacity:0;transition:transform .6s cubic-bezier(.2,.9,.3,1.2),opacity .4s;display:grid;grid-template-columns:8cqw 1fr;gap:2.5cqw;align-items:center}
+.hv-notif.in{transform:none;opacity:1}
+.hv-notif .ic{width:8cqw;height:8cqw;border-radius:2cqw;background:#25d366;display:grid;place-items:center}
+.hv-notif b{display:block;font-size:3.5cqw}
+.hv-notif span{color:#c3c8d4}
+.hv-hearts{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hv-hearts i{position:absolute;bottom:30%;width:4cqw;height:4cqw;color:var(--rose);animation:hvup 1.8s ease-out both}
+@keyframes hvup{from{opacity:1;transform:translateY(0) scale(.6)}to{opacity:0;transform:translateY(-45cqw) scale(1.2)}}
+/* escena 4 */
+.hv-cat{justify-content:flex-start;padding:calc(5.5% + 26px) 5cqw 5cqw}
+.hv-cath{align-self:stretch;display:flex;justify-content:space-between;align-items:center;font-size:3.6cqw;margin-bottom:4cqw}
+.hv-cath b{font-family:var(--f-display);letter-spacing:.14em;font-size:3.4cqw}
+.hv-cath span{color:var(--muted)}
+.hv-grid{align-self:stretch;display:grid;grid-template-columns:1fr 1fr;gap:3cqw}
+.hv-it{background:#11141d;border:1px solid #ffffff14;border-radius:3cqw;padding:3cqw;display:flex;flex-direction:column;align-items:center;gap:1.5cqw;font-size:3.2cqw;transition:border-color .3s,transform .3s}
+.hv-it svg{width:70%;height:auto}
+.hv-it.sel{border-color:var(--ice);transform:scale(1.04);box-shadow:0 0 18px -4px #9fd8ff88}
+.hv-sheet{position:absolute;left:0;right:0;bottom:0;background:#141824;border-top-left-radius:5cqw;border-top-right-radius:5cqw;padding:5cqw;display:flex;flex-direction:column;gap:3cqw;transform:translateY(105%);transition:transform .5s cubic-bezier(.2,.9,.3,1)}
+.hv-sheet.in{transform:none}
+.hv-sheet .row2{display:flex;justify-content:space-between;font-size:3.6cqw}
+.hv-sheet .row2 b{color:#3ddc97}
+.hv-sheet .hv-wbtn{text-align:center;padding:3.5cqw}
+.hv-done{position:absolute;inset:0;background:#07080cdd;display:grid;place-items:center;align-content:center;gap:3cqw;opacity:0;transition:opacity .4s;text-align:center;font-size:4cqw}
+.hv-done.in{opacity:1}
+.hv-done .ck{width:18cqw;height:18cqw;border-radius:50%;background:#3ddc97;display:grid;place-items:center;transform:scale(.3);transition:transform .5s cubic-bezier(.2,1.4,.4,1)}
+.hv-done.in .ck{transform:none}
+.hv-done b{font-family:var(--f-display);letter-spacing:.12em;font-size:4cqw}
+/* guía Doberman */
+.hv-guide{display:flex;align-items:flex-end;gap:10px;width:min(100%,330px)}
+.hv-dog{width:78px;flex:none;animation:hvbob 2.4s ease-in-out infinite;transform-origin:50% 100%}
+@keyframes hvbob{50%{transform:translateY(-3px) rotate(-2deg)}}
+.hv-dog .earL{transform-origin:28px 36px;animation:hvear 4s ease-in-out infinite}
+@keyframes hvear{0%,86%,100%{transform:none}90%{transform:rotate(-10deg)}94%{transform:rotate(4deg)}}
+.hv-dog .eyes{transform-origin:50px 46px;animation:hvblink 3.6s infinite}
+@keyframes hvblink{0%,93%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+.hv-dog .mouth{transform-origin:50px 76px;transform:scaleY(0);transition:transform .15s}
+.hv-dog.talk .mouth{animation:hvtalk .28s ease-in-out 5 alternate}
+@keyframes hvtalk{from{transform:scaleY(.2)}to{transform:scaleY(1)}}
+.hv-bub{position:relative;flex:1;min-width:0;background:#141824;border:1px solid var(--line);border-radius:14px;border-bottom-left-radius:4px;padding:10px 12px;font-size:13.5px;line-height:1.4;margin-bottom:18px}
+.hv-bub::before{content:"";position:absolute;left:-7px;bottom:-1px;width:12px;height:12px;background:#141824;border-left:1px solid var(--line);border-bottom:1px solid var(--line);transform:skewX(40deg)}
+.hv-bub small{display:block;font-family:var(--f-mono);font-size:11px;color:var(--ice);margin-bottom:2px}
+.hv-bub span{display:block;transition:opacity .25s}
 </style>
 <style>
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%;touch-action:pan-y;overscroll-behavior:none;background:#06070b}
@@ -153,7 +254,7 @@ html,body{margin:0}[hidden]{display:none!important}*,*::before,*::after{box-sizi
 <main class="wrap">
   <header>
     <div class="eyebrow">3 de octubre · <b>Día del Novio</b></div>
-    <h1>Tienes un regalo</h1>
+    <h1 id="title">Tienes un regalo</h1>
     <p class="sub" id="subtxt">Toca el sobre para abrirlo.</p>
   </header>
   <section class="stage">
@@ -183,10 +284,10 @@ html,body{margin:0}[hidden]{display:none!important}*,*::before,*::after{box-sizi
           <div class="sheen"></div>
           <div class="backstrip"></div>
           <div class="backbody">
-            <p>CÓDIGO DE CANJE</p>
+            <p id="backLabel">CÓDIGO DE CANJE</p>
             <div class="code" id="codeTxt"></div>
-            <a class="wa" id="waBtn" href="#" target="_blank" rel="noopener" tabindex="-1"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg>Canjear por WhatsApp</a>
-            <p>Canjeable por $14 en prendas de Spot Club · Un solo uso</p>
+            <a class="wa" id="waBtn" href="#" target="_blank" rel="noopener" tabindex="-1"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg><span id="waTxt">Canjear por WhatsApp</span></a>
+            <p id="backNote">Canjeable por $14 en prendas de Spot Club · Un solo uso</p>
           </div>
         </div>
       </div>
@@ -195,13 +296,73 @@ html,body{margin:0}[hidden]{display:none!important}*,*::before,*::after{box-sizi
   <p class="flipnote" id="flipnote" hidden>Voltea la tarjeta tocándola: el código y el botón para canjear están detrás</p>
 
   <section class="panel" id="panel" hidden>
-    <h2>Cómo canjearla</h2>
-    <ol class="steps">
+    <h2 id="stepsTitle">Cómo canjearla</h2>
+    <div class="hv" id="howVideo" hidden aria-label="Video animado: cómo pedir la gift card">
+      <div class="hv-phone" id="hvPhone">
+        <div class="hv-steps" id="hvSteps"><i></i><i></i><i></i><i></i></div>
+        <div class="hv-finger" id="hvFinger"></div>
+
+        <div class="hv-sc" data-s="0">
+          <div class="hv-env" id="hvEnv"><b></b></div>
+          <div class="hv-card" id="hvCard1"><div class="hv-ci">
+            <div class="hv-f hv-front"><div class="hv-brand">SPOT CLUB</div><div class="hv-amt">$14</div><div class="hv-nm"><div>PARA<b>Tu novio</b></div><div>DE<b>Tú</b></div></div></div>
+            <div class="hv-f hv-back"><div class="hv-code">$14 · SPOT CLUB</div><div class="hv-wbtn" id="hvBtn1">Pedir mi gift card</div></div>
+          </div></div>
+        </div>
+
+        <div class="hv-sc hv-chat" data-s="1">
+          <div class="hv-ch"><div class="hv-av">SC</div><div><strong>Spot Club</strong><small>en línea</small></div></div>
+          <div class="hv-cb" id="hvChat"></div>
+        </div>
+
+        <div class="hv-sc" data-s="2">
+          <div class="hv-card" id="hvCard3"><div class="hv-ci">
+            <div class="hv-f hv-front"><div class="hv-brand">SPOT CLUB</div><div class="hv-amt">$14</div><div class="hv-nm"><div>PARA<b>Luis</b></div><div>DE<b>Ana</b></div></div></div>
+            <div class="hv-f hv-back"><div style="font-size:3cqw;color:var(--muted)">CÓDIGO</div><div class="hv-code">SC-NOVIO-1401</div><div class="hv-wbtn">Canjear</div></div>
+          </div></div>
+          <div class="hv-lock" id="hvLock">
+            <div class="hv-time">12:00</div><div class="hv-date">sábado, 3 de octubre</div>
+            <div class="hv-notif" id="hvNotif"><div class="ic"><svg viewBox="0 0 24 24" width="60%" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></div><div><b>Spot Club</b><span>Luis, Ana te envió un regalo sorpresa por el Día del Novio. Ábrelo aquí: spotclub…/?c=SC-NOVIO-1401</span></div></div>
+          </div>
+          <div class="hv-hearts" id="hvHearts"></div>
+        </div>
+
+        <div class="hv-sc hv-cat" data-s="3">
+          <div class="hv-cath"><b>CATÁLOGO</b><span>@spot_club</span></div>
+          <div class="hv-grid" id="hvGrid"></div>
+          <div class="hv-sheet" id="hvSheet">
+            <div class="row2"><span>Franela negra</span></div>
+            <div class="row2"><span>Gift card SC-NOVIO-1401</span><b>−$14</b></div>
+            <div class="hv-wbtn" id="hvBtn4">Canjear por WhatsApp</div>
+          </div>
+          <div class="hv-done" id="hvDone"><div class="ck"><svg viewBox="0 0 24 24" width="55%" fill="none" stroke="#06070b" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><b>¡CANJEADA!</b><span style="color:var(--muted)">Se descontaron $14</span></div>
+        </div>
+      </div>
+
+      <div class="hv-guide">
+        <svg class="hv-dog" id="hvDog" viewBox="0 0 100 100" aria-hidden="true">
+          <g class="earL"><path d="M30 42 L20 3 L44 30 Z" fill="#17181d"/><path d="M31 36 L24 13 L39 31 Z" fill="#4a2f24"/></g>
+          <path d="M70 42 L80 3 L56 30 Z" fill="#17181d"/><path d="M69 36 L76 13 L61 31 Z" fill="#4a2f24"/>
+          <ellipse cx="50" cy="47" rx="28" ry="26" fill="#17181d"/>
+          <path d="M34 50 Q50 40 66 50 L62 80 Q50 90 38 80 Z" fill="#17181d"/>
+          <path d="M37 64 Q50 57 63 64 L60 79 Q50 88 40 79 Z" fill="#b5652b"/>
+          <ellipse cx="38" cy="36" rx="4.2" ry="2.6" fill="#b5652b"/><ellipse cx="62" cy="36" rx="4.2" ry="2.6" fill="#b5652b"/>
+          <g class="eyes"><ellipse cx="39" cy="46" rx="5" ry="5.4" fill="#f2f4f8"/><ellipse cx="61" cy="46" rx="5" ry="5.4" fill="#f2f4f8"/><circle cx="40" cy="47" r="3.2" fill="#24160e"/><circle cx="60" cy="47" r="3.2" fill="#24160e"/><circle cx="41.2" cy="45.6" r="1" fill="#fff"/><circle cx="61.2" cy="45.6" r="1" fill="#fff"/></g>
+          <ellipse cx="50" cy="63" rx="7" ry="4.6" fill="#08080a"/><ellipse cx="48" cy="61.6" rx="2.2" ry="1.1" fill="#ffffff55"/>
+          <path d="M50 67 L50 72 M44 73 Q50 77 56 73" stroke="#08080a" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          <g class="mouth"><ellipse cx="50" cy="78" rx="5" ry="3.4" fill="#3b0f18"/><ellipse cx="50" cy="80" rx="3.4" ry="2" fill="#ff5d8f"/></g>
+          <rect x="30" y="86" width="40" height="8" rx="4" fill="#2a2d38"/>
+          <g fill="#c9d2e3"><path d="M35 86 L37.5 80 L40 86Z"/><path d="M42.5 86 L45 80 L47.5 86Z"/><path d="M52.5 86 L55 80 L57.5 86Z"/><path d="M60 86 L62.5 80 L65 86Z"/></g>
+        </svg>
+        <div class="hv-bub"><small id="hvNum">PASO 1 DE 4</small><span id="hvTxt">Toca el sobre y voltea la tarjeta.</span></div>
+      </div>
+    </div>
+    <ol class="steps" id="steps">
       <li><span>Elige tu franela o prenda favorita en nuestro catálogo: <a class="tt" href="https://www.tiktok.com/@spot_club" target="_blank" rel="noopener">Ver catálogo en TikTok (@spot_club)</a></span></li>
       <li><span>Voltea la tarjeta y toca <b>Canjear por WhatsApp</b>. El mensaje ya lleva tu código.</span></li>
       <li><span>Se descuentan $14 de tu compra. Si la prenda cuesta más, pagas solo la diferencia.</span></li>
     </ol>
-    <p class="fine">WhatsApp Spot Club: <span class="mono">0412-514-3352</span> · Válida para un solo uso.</p>
+    <p class="fine">WhatsApp Spot Club: <span class="mono">0412-514-3352</span> · <span id="fineTxt">Válida para un solo uso.</span></p>
   </section>
 
   <section class="panel usedbox" id="usedPanel" hidden>
@@ -284,7 +445,26 @@ const COLECCION = "giftcards";
   const env=$('envelope'), card=$('card');
   const params=new URLSearchParams(location.search);
   const CODE=(params.get('c')||DEFAULT.code).toUpperCase();
+  const PROMO=!params.get('c');
   let S=Object.assign({},DEFAULT,{code:CODE});
+  const TT='<a class="tt" href="https://www.tiktok.com/@spot_club" target="_blank" rel="noopener">Ver catálogo en TikTok (@spot_club)</a>';
+  if(PROMO){
+    S.para='Tu novio'; S.de='Tú';
+    document.title='Pide tu Gift Card · Spot Club';
+    $('title').textContent='Pide tu gift card';
+    $('subtxt').textContent='Regálale $14 en Spot Club por el Día del Novio. Toca el sobre.';
+    $('backLabel').textContent='GIFT CARD DÍA DEL NOVIO';
+    $('codeTxt').textContent='$14 · SPOT CLUB';
+    $('waTxt').textContent='Pedir mi gift card';
+    $('backNote').textContent='Se la enviamos a su WhatsApp a las 12:00 am como sorpresa';
+    $('stepsTitle').textContent='Cómo pedirla';
+    $('steps').innerHTML='<li><span>Voltea la tarjeta y toca <b>Pedir mi gift card</b> para escribirnos por WhatsApp.</span></li>'
+      +'<li><span>Envíanos su nombre, el tuyo y <b>su número de WhatsApp</b>, y paga los $14.</span></li>'
+      +'<li><span>A las <b>12:00 am del 3 de octubre</b> le enviamos su gift card directo a su WhatsApp, como sorpresa. El mensaje dice que es un regalo de tu parte, así sabe que viene de ti.</span></li>'
+      +'<li><span>Él elige su prenda en '+TT+' y la canjea por WhatsApp.</span></li>';
+    $('fineTxt').textContent='Cada gift card es de un solo uso.';
+    $('card').setAttribute('aria-label','Gift card de 14 dólares para pedir. Toca para voltear');
+  }
   let db=null, auth=null, ref=null, opened=false;
   const isUsed=()=>S.status==='canjeada';
   const fmt=d=>{try{return new Date(d).toLocaleDateString('es-VE',{day:'numeric',month:'long',year:'numeric'})}catch(e){return ''}};
@@ -294,23 +474,87 @@ const COLECCION = "giftcards";
     const used=isUsed();
     $('cardPara').textContent=S.para||'Mi novio';
     $('cardDe').textContent=S.de||'Con amor';
-    $('codeTxt').textContent=S.code;
-    const msg=`Hola Spot Club! Quiero canjear mi Gift Card del Día del Novio de $14. Código: ${S.code}. Para: ${S.para}`;
+    if(!PROMO) $('codeTxt').textContent=S.code;
+    const msg=PROMO?'Hola Spot Club! Quiero pedir una Gift Card del Día del Novio de $14 para que se la envíen a las 12:00 am.\nPara (nombre de él): ___\nDe (mi nombre): ___\nWhatsApp de él: ___'
+      :`Hola Spot Club! Quiero canjear mi Gift Card del Día del Novio de $14. Código: ${S.code}. Para: ${S.para}`;
     $('waBtn').href='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(msg);
     card.classList.toggle('used',used); $('stamp').hidden=!used;
     if(used) card.classList.remove('flipped');
     $('usedDate').textContent=used&&S.canjeadaEn?' el '+fmt(S.canjeadaEn):'';
     if(opened){
       $('usedPanel').hidden=!used; $('panel').hidden=used; $('flipnote').hidden=used;
-      $('subtxt').textContent=used?'Esta gift card ya fue usada.':'Una gift card de $14 para usar en Spot Club.';
+      $('subtxt').textContent=PROMO?'Voltea la tarjeta para pedir la tuya.':used?'Esta gift card ya fue usada.':'Una gift card de $14 para usar en Spot Club.';
+      if(PROMO) $('flipnote').textContent='Toca la tarjeta: detrás está el botón para pedirla';
     }
     renderAdmin();
   }
 
+  // ---------- Video explicativo ----------
+  const HV={started:false};
+  function startHowVideo(){
+    if(HV.started||!$('howVideo'))return; HV.started=true;
+    const ph=$('hvPhone'), fing=$('hvFinger'), dog=$('hvDog');
+    const scenes=[...ph.querySelectorAll('.hv-sc')], bars=[...$('hvSteps').children];
+    const TXT=['Toca el sobre y voltea la tarjeta. Detrás está el botón para pedirla.','Escríbenos con su nombre, el tuyo y su WhatsApp, y paga los $14.','A las 12:00 am le llega de sorpresa a su WhatsApp, diciendo que es un regalo tuyo.','Él elige su franela en el catálogo y la canjea por WhatsApp.'];
+    const DUR=[6200,9600,6400,6600];
+    const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+    const tee=c=>`<svg viewBox="0 0 40 40"><path d="M8 7 L15 3.5 Q20 8 25 3.5 L32 7 L37 15 L31 18 L31 37 L9 37 L9 18 L3 15 Z" fill="${c}" stroke="#ffffff22"/><circle cx="20" cy="17" r="3" fill="none" stroke="${c==='#f2f2f2'?'#111':'#fff'}" stroke-width="1.2"/></svg>`;
+    $('hvGrid').innerHTML=[['#111217','Franela negra'],['#f2f2f2','Franela blanca'],['#5b6272','Franela gris'],['#6d1a33','Franela vino']].map(([c,n])=>`<div class="hv-it">${tee(c)}<span>${n}</span></div>`).join('');
+    function show(i){
+      scenes.forEach((s,k)=>s.classList.toggle('on',k===i));
+      bars.forEach((b,k)=>{b.classList.remove('on');b.classList.toggle('done',k<i)});
+      void bars[i].offsetWidth; bars[i].style.setProperty('--dur',DUR[i]+'ms'); bars[i].classList.add('on');
+      $('hvNum').textContent='PASO '+(i+1)+' DE 4';
+      const t=$('hvTxt'); t.style.opacity=0; setTimeout(()=>{t.textContent=TXT[i];t.style.opacity=1},200);
+      dog.classList.remove('talk'); void dog.offsetWidth; dog.classList.add('talk');
+    }
+    async function tap(el){
+      const p=ph.getBoundingClientRect(), r=el.getBoundingClientRect(), f=fing.offsetWidth/2;
+      fing.style.transform=`translate(${r.left-p.left+r.width/2-f-7}px,${r.top-p.top+r.height/2-f-7}px)`;
+      fing.classList.add('show'); await sleep(650);
+      fing.classList.add('press'); await sleep(260); fing.classList.remove('press');
+    }
+    const hideF=()=>fing.classList.remove('show');
+    function bubble(cls,html){const b=document.createElement('div');b.className='hv-b '+cls;b.innerHTML=html;$('hvChat').appendChild(b);return b}
+    async function typing(ms){const t=document.createElement('div');t.className='hv-typing';t.innerHTML='<i></i><i></i><i></i>';$('hvChat').appendChild(t);await sleep(ms);t.remove()}
+    async function s1(){
+      const env1=$('hvEnv'),c=$('hvCard1'),b=$('hvBtn1');
+      env1.classList.remove('gone');c.classList.remove('in','flip');b.classList.remove('press');
+      show(0); await sleep(900);
+      await tap(env1); env1.classList.add('gone'); await sleep(450); c.classList.add('in'); await sleep(900);
+      await tap(c); c.classList.add('flip'); await sleep(1100);
+      await tap(b); b.classList.add('press'); await sleep(250); b.classList.remove('press'); await sleep(700); hideF();
+    }
+    async function s2(){
+      $('hvChat').innerHTML=''; hideF(); show(1); await sleep(700);
+      bubble('out','Hola Spot Club! Quiero pedir una Gift Card del Día del Novio de $14.<br>Para: Luis · De: Ana<br>WhatsApp de él: 0414-000-0000'); await sleep(1300);
+      await typing(900); bubble('in','¡Claro! Son $14. Se la enviamos a su WhatsApp a las <b>12:00 am</b> del 3 de octubre como sorpresa, de tu parte.'); await sleep(1700);
+      bubble('out','Listo, pago enviado ✓'); await sleep(900);
+      await typing(1000); bubble('in','Recibido ✓ A las 12:00 am Luis recibe su gift card. ¡No le digas nada!'); await sleep(2300);
+    }
+    async function s3(){
+      const lock=$('hvLock'),n=$('hvNotif'),c=$('hvCard3');
+      lock.classList.remove('gone');n.classList.remove('in');c.classList.remove('in','flip');$('hvHearts').innerHTML='';
+      show(2); await sleep(700); n.classList.add('in'); await sleep(1000);
+      await tap(n); lock.classList.add('gone'); c.classList.add('in'); hideF(); await sleep(1300);
+      await tap(c); c.classList.add('flip'); hideF();
+      for(let i=0;i<10;i++){const h=document.createElement('i');h.style.left=(15+Math.random()*70)+'%';h.style.animationDelay=(i*90)+'ms';h.innerHTML='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2 0 3.6 1.1 5.2 3 1.6-1.9 3.2-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"/></svg>';$('hvHearts').appendChild(h)}
+      await sleep(2000);
+    }
+    async function s4(){
+      const items=[...$('hvGrid').children],sh=$('hvSheet'),d=$('hvDone'),b=$('hvBtn4');
+      items.forEach(i=>i.classList.remove('sel'));sh.classList.remove('in');d.classList.remove('in');
+      show(3); await sleep(900);
+      await tap(items[0]); items[0].classList.add('sel'); await sleep(500); sh.classList.add('in'); await sleep(800);
+      await tap(b); b.classList.add('press'); await sleep(250); b.classList.remove('press'); hideF();
+      d.classList.add('in'); await sleep(2000);
+    }
+    (async()=>{ while(true){ await s1(); await s2(); await s3(); await s4(); } })();
+  }
   function open(){
     if(env.classList.contains('opening'))return;
     env.classList.add('opening'); if(!isUsed()) burst();
-    setTimeout(()=>{env.hidden=true;card.hidden=false;opened=true;render();
+    setTimeout(()=>{env.hidden=true;card.hidden=false;opened=true;render();if(PROMO){$('howVideo').hidden=false;startHowVideo();}
       card.animate([{transform:'translateY(30px) rotateX(35deg) scale(.85)',opacity:0},{transform:'none',opacity:1}],{duration:900,easing:'cubic-bezier(.2,.8,.2,1)'});
     },450);
   }
@@ -319,7 +563,7 @@ const COLECCION = "giftcards";
   function flip(){if(isUsed())return;card.classList.toggle('flipped');const f=card.classList.contains('flipped');$('waBtn').tabIndex=f?0:-1;card.setAttribute('aria-label',f?'Parte trasera de la gift card. Toca para voltear':'Gift card de 14 dólares. Toca para voltear')}
   $('waBtn').addEventListener('click',e=>{e.stopPropagation();if(!card.classList.contains('flipped')||isUsed())e.preventDefault()});
   $('waBtn').addEventListener('keydown',e=>e.stopPropagation());
-  $('codeTxt').addEventListener('click',e=>{if(!card.classList.contains('flipped'))return;e.stopPropagation();copy(S.code,'Código copiado',$('codeTxt'))});
+  $('codeTxt').addEventListener('click',e=>{if(PROMO||!card.classList.contains('flipped'))return;e.stopPropagation();copy(S.code,'Código copiado',$('codeTxt'))});
   card.addEventListener('click',flip);
   card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();flip()}});
   function tilt(x,y){
@@ -344,7 +588,7 @@ const COLECCION = "giftcards";
       firebase.initializeApp(firebaseConfig);
       db=firebase.firestore(); auth=firebase.auth();
       ref=db.collection(COLECCION).doc(CODE);
-      ref.onSnapshot(snap=>{ if(snap.exists){S=Object.assign({},DEFAULT,snap.data(),{code:CODE});} render(); },err=>console.warn(err));
+      if(!PROMO) ref.onSnapshot(snap=>{ if(snap.exists){S=Object.assign({},DEFAULT,snap.data(),{code:CODE});} render(); },err=>console.warn(err));
       let unsubList=null;
       auth.onAuthStateChanged(u=>{ $('adminPanel').hidden=!u; if(u){fillAdmin();renderAdmin();unsubList=db.collection(COLECCION).onSnapshot(renderList,err=>{$('gcSum').textContent='No se pudo cargar la lista ('+(err.code||'error')+'). Revisa las reglas.'})} else if(unsubList){unsubList();unsubList=null} });
     }catch(e){console.warn(e)}
@@ -372,9 +616,15 @@ const COLECCION = "giftcards";
   $('logoutBtn').addEventListener('click',()=>auth.signOut());
 
   // ---------- Panel ----------
-  function fillAdmin(){$('inPara').value=S.para;$('inDe').value=S.de;$('inCode').value=S.code}
+  function fillAdmin(){$('inPara').value=PROMO?'':S.para;$('inDe').value=PROMO?'':S.de;$('inCode').value=PROMO?'':S.code;if(PROMO)$('inCode').placeholder='Ej: SC-NOVIO-1401'}
   function renderAdmin(){
     if($('adminPanel').hidden)return;
+    if(PROMO){
+      const st0=$('adminStatus');st0.classList.remove('off');st0.querySelector('span').textContent='Página de pedidos · crea aquí una gift card nueva';
+      $('blockBtn').hidden=true;$('saveBtn').textContent='Crear gift card';
+      $('shareLink').textContent=location.origin+location.pathname+'  (link para pedir)';
+      return;
+    }
     const used=isUsed(), st=$('adminStatus');
     st.classList.toggle('off',used);
     st.querySelector('span').textContent=used?('Canjeada'+(S.canjeadaEn?' · '+fmt(S.canjeadaEn):'')+' · bloqueada'):'Activa · lista para usar';
@@ -411,7 +661,7 @@ const COLECCION = "giftcards";
     $('adminMsg').textContent=label;
     try{
       await db.collection(COLECCION).doc(code).set(data,{merge:true});
-      if(code!==CODE){ $('adminMsg').textContent='Nueva gift card creada. Abriendo…'; location.href=linkFor(code); return; }
+      if(code!==CODE||PROMO){ $('adminMsg').textContent='Nueva gift card creada. Abriendo…'; location.href=linkFor(code); return; }
       $('adminMsg').textContent='Guardado.';
     }catch(err){ $('adminMsg').textContent='No se pudo guardar: revisa las reglas de Firestore ('+(err.code||'error')+').'; }
   }
